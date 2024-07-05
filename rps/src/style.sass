@@ -4,7 +4,7 @@
 
 @keyframes shakehand
   0%
-    transform: rotate(90deg) 
+    transform: rotate(90deg)
   50%
     transform: rotate(90deg) translateX(-50px)
   100%
@@ -12,7 +12,7 @@
 
 @keyframes shakehandRight
   0%
-    transform: rotate(-90deg) scaleX(-1) 
+    transform: rotate(-90deg) scaleX(-1)
   50%
     transform: rotate(-90deg) scaleX(-1) translateX(-50px)
   100%
@@ -28,11 +28,11 @@
   100%
     opacity: 0
 
-.shakehand 
+.shakehand
   animation: 0.5s 6 shakehand
   animation-timing-function: linear
 
-  &:last-child 
+  &:last-child
     animation: 0.5s 6 shakehandRight
     animation-timing-function: linear
 
@@ -103,7 +103,7 @@ body
       background-position: left
       transition: 1s
 
-    #counter
+    #counter, .winnerHeading
       text-shadow: 0 0px 20px rgba(255, 166, 0, 1)
       color: #fff
       font-size: 60px
@@ -111,8 +111,11 @@ body
       top: 50%
       left: 50%
       transform: translate(-50%, -50%)
+      font-weight: normal
+
+    #counter
       opacity: 0
-      
+
       &.shakehand
         animation: 1s 3 counter
         animation-timing-function: linear
@@ -127,15 +130,16 @@ body
         transform: rotate(90deg)
 
         &:last-child
-          transform: rotate(-90deg) scaleX(-1) 
+          transform: rotate(-90deg) scaleX(-1)
 
     .score
       display: flex
       text-shadow: 0 0px 20px rgba(255, 166, 0, 1)
       color: #fff
       font-size: 30px
-      display: flex
       justify-content: space-between
+      position: relative
+      z-index: 1
 
       h3
         width: 25%
@@ -165,5 +169,24 @@ body
           box-shadow: 0 0px 50px rgb(255, 255, 255, 0.3)
 
         &:hover
+          border: 3px solid #ffffff55
+          box-shadow: 0 0px 50px rgb(255, 255, 255, 0.3)
+
+    .reset
+      background: linear-gradient(90deg, rgba(255, 42, 114, 1) 0%, rgba(170, 104, 255) 50%, rgba(255, 42, 114, 1) 100%)
+      border-radius: 5px
+      height: 50px
+      border: 3px solid #ffffff00
+      transition: 0.4s
+      position: relative
+      z-index: 1
+      font-family: "Bangers", system-ui
+      font-size: 30px
+      padding: 0 10px
+      color: #fff
+      cursor: pointer
+      transform: translateY(50%)
+      
+      &:hover
           border: 3px solid #ffffff55
           box-shadow: 0 0px 50px rgb(255, 255, 255, 0.3)
